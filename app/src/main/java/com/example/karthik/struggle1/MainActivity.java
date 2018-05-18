@@ -29,7 +29,7 @@ import static com.example.karthik.struggle1.R.layout.notification_action;
 public class MainActivity extends AppCompatActivity {public String [] str = new String[50];
     int please =0;
     int k=0;
-    int powerhelp=0;
+
     int helper = 1;
     int x=1;int flag;
  public    int listindex = 0;int c=1;
@@ -58,7 +58,10 @@ int power=0;
         reset.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {SharedPreferences share = getSharedPreferences("Save mode",Context.MODE_PRIVATE);
+                SharedPreferences.Editor edit = share.edit();
+                edit.clear();
+                edit.apply();
                temp.setText("");
                 temp.setBackgroundColor(Color.WHITE);
                 templist.setText("");
@@ -66,7 +69,7 @@ int power=0;
                 if(x==6||getindex()==5)
                     please=1;
                 k=0;
-                 powerhelp=0;
+
                  helper = 1;
                  x=1;
                    listindex = 0; c=1;
